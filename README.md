@@ -5,7 +5,7 @@ Social Framework Integration into openFrameworks on iOS
 
 ##Installation
 Add the Accounts and Social Framework to your project in Xcode.
-Then just copy the ofxiPhonePayPal.h and ofxiPhonePayPal.mm files into your project.
+Then just copy the ofxiPhoneSocial.h and ofxiPhoneSocial.mm files into your project.
 
 ##Usage
 
