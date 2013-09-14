@@ -24,3 +24,7 @@ Last but not least, if you want to change what's shown on the share menu, uncomm
 activityController.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard];
 
 Autocomplete will help you but you can also view documentation at http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIActivity_Class/Reference/Reference.html#//apple_ref/occ/cl/UIActivity
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/claytical/ofxiphonesocial/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
