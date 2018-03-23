@@ -7,6 +7,7 @@
 //
 
 #import "ofxiPhoneSocial.h"
+#import "ofxiOSAppDelegate.h"
 
 void ofxiPhoneSocial::postToFaceBook(string message, string image_filename) {
   //  social = [[ofxiPhoneSocialDelegate alloc] init];
@@ -17,7 +18,7 @@ void ofxiPhoneSocial::postToFaceBook(string message, string image_filename) {
         [viewController setInitialText:ofxStringToNSString(message)];
             [viewController addImage:[UIImage imageNamed:ofxStringToNSString(image_filename)]];
             // Present Compose View Controller
-        [ofxiPhoneGetAppDelegate().glViewController presentModalViewController:viewController animated:YES];
+        [ofxiOSGetAppDelegate().glViewController presentModalViewController:viewController animated:YES];
     } else {
         NSString *message = @"You haven't connected your Facebook account or you aren't connected to the network. You should check your settings.";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -35,7 +36,7 @@ void ofxiPhoneSocial::postToFaceBook(string message, UIImage *image) {
         [viewController setInitialText:ofxStringToNSString(message)];
         [viewController addImage:image];
         // Present Compose View Controller
-        [ofxiPhoneGetAppDelegate().glViewController presentModalViewController:viewController animated:YES];
+        [ofxiOSGetAppDelegate().glViewController presentModalViewController:viewController animated:YES];
     } else {
         NSString *message = @"You haven't connected your Facebook account or you aren't connected to the network. You should check your settings.";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -54,7 +55,7 @@ void ofxiPhoneSocial::postToFaceBook(string message, ofImage image) {
         /* thanks to xxxlol for this conversion code in the of forums
          http://forum.openframeworks.cc/index.php?topic=12377.0 */
       
-        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, image.getPixels(), (image.getWidth()*image.getHeight()*3), NULL);
+        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, image.getPixels().getData(), (image.getWidth()*image.getHeight()*3), NULL);
         CGImageRef imageRef = CGImageCreate(image.getWidth(), image.getHeight(), 8, 24, 3*image.getWidth(), CGColorSpaceCreateDeviceRGB(), kCGBitmapByteOrderDefault, provider, NULL, NO, kCGRenderingIntentDefault);
         NSData *imageData = UIImagePNGRepresentation([UIImage imageWithCGImage:imageRef]);
         UIImage *output = [UIImage imageWithData:imageData];
@@ -132,7 +133,7 @@ void ofxiPhoneSocial::tweet(string message, ofImage image) {
         /* thanks to xxxlol for this conversion code in the of forums
          http://forum.openframeworks.cc/index.php?topic=12377.0 */
         
-        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, image.getPixels(), (image.getWidth()*image.getHeight()*3), NULL);
+        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, image.getPixels().getData(), (image.getWidth()*image.getHeight()*3), NULL);
         CGImageRef imageRef = CGImageCreate(image.getWidth(), image.getHeight(), 8, 24, 3*image.getWidth(), CGColorSpaceCreateDeviceRGB(), kCGBitmapByteOrderDefault, provider, NULL, NO, kCGRenderingIntentDefault);
         NSData *imageData = UIImagePNGRepresentation([UIImage imageWithCGImage:imageRef]);
         UIImage *output = [UIImage imageWithData:imageData];
@@ -206,7 +207,7 @@ void ofxiPhoneSocial::share(string text, ofImage image) {
     /* thanks to xxxlol for this conversion code in the of forums
      http://forum.openframeworks.cc/index.php?topic=12377.0 */
     
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, image.getPixels(), (image.getWidth()*image.getHeight()*3), NULL);
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, image.getPixels().getData(), (image.getWidth()*image.getHeight()*3), NULL);
     CGImageRef imageRef = CGImageCreate(image.getWidth(), image.getHeight(), 8, 24, 3*image.getWidth(), CGColorSpaceCreateDeviceRGB(), kCGBitmapByteOrderDefault, provider, NULL, NO, kCGRenderingIntentDefault);
     NSData *imageData = UIImagePNGRepresentation([UIImage imageWithCGImage:imageRef]);
     UIImage *output = [UIImage imageWithData:imageData];
