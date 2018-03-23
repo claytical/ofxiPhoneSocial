@@ -9,8 +9,8 @@ void ofApp::setup(){
 	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	
 	ofBackground(0);
-    testImage.loadImage("Icon.png");
-    font.loadFont("vag.ttf", 18);
+    testImage.load("Icon.png");
+    font.load("vag.ttf", 18);
 }
 
 //--------------------------------------------------------------
