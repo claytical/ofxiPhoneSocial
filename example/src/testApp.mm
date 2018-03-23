@@ -9,7 +9,7 @@ void testApp::setup(){
 	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	
 	ofBackground(0);
-    testImage.loadImage("icon.png");
+    testImage.loadImage("Icon.png");
     font.loadFont("vag.ttf", 18);
 }
 
@@ -22,7 +22,7 @@ void testApp::update(){
 void testApp::draw(){
     ofSetColor(255,255, 255);
     font.drawString("double tap to share", 20, 60);
-	testImage.draw(ofGetWidth()/2, ofGetHeight()/2, testImage.width, testImage.height);
+	testImage.draw(ofGetWidth()/2, ofGetHeight()/2, testImage.getWidth(), testImage.getHeight());
 }
 
 //--------------------------------------------------------------
@@ -54,7 +54,7 @@ void testApp::touchDoubleTap(ofTouchEventArgs & touch){
 //    social->tweet("I'm tweeting an ofImage", testImage);
 //    social->show("I'm not sure where I want to share this image...", testImage);
 
-    social->share("Hello!", "icon.png");
+    social->share("Hello!", "Icon.png");
 }
 
 //--------------------------------------------------------------
