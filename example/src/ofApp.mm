@@ -1,7 +1,7 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){	
+void ofApp::setup(){	
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
 	
@@ -14,39 +14,39 @@ void testApp::setup(){
 }
 
 //--------------------------------------------------------------
-void testApp::update(){
+void ofApp::update(){
 
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void ofApp::draw(){
     ofSetColor(255,255, 255);
     font.drawString("double tap to share", 20, 60);
 	testImage.draw(ofGetWidth()/2, ofGetHeight()/2, testImage.getWidth(), testImage.getHeight());
 }
 
 //--------------------------------------------------------------
-void testApp::exit(){
+void ofApp::exit(){
 
 }
 
 //--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs & touch){
+void ofApp::touchDown(ofTouchEventArgs & touch){
 
 }
 
 //--------------------------------------------------------------
-void testApp::touchMoved(ofTouchEventArgs & touch){
+void ofApp::touchMoved(ofTouchEventArgs & touch){
 
 }
 
 //--------------------------------------------------------------
-void testApp::touchUp(ofTouchEventArgs & touch){
+void ofApp::touchUp(ofTouchEventArgs & touch){
 
 }
 
 //--------------------------------------------------------------
-void testApp::touchDoubleTap(ofTouchEventArgs & touch){
+void ofApp::touchDoubleTap(ofTouchEventArgs & touch){
 
 //    social->postToFaceBook("I'm posting an ofImage", testImage);
 //    social->tweet("I'm tweeting from openFrameworks!");
@@ -58,27 +58,27 @@ void testApp::touchDoubleTap(ofTouchEventArgs & touch){
 }
 
 //--------------------------------------------------------------
-void testApp::touchCancelled(ofTouchEventArgs & touch){
+void ofApp::touchCancelled(ofTouchEventArgs & touch){
     
 }
 
 //--------------------------------------------------------------
-void testApp::lostFocus(){
+void ofApp::lostFocus(){
 
 }
 
 //--------------------------------------------------------------
-void testApp::gotFocus(){
+void ofApp::gotFocus(){
 
 }
 
 //--------------------------------------------------------------
-void testApp::gotMemoryWarning(){
+void ofApp::gotMemoryWarning(){
 
 }
 
 //--------------------------------------------------------------
-void testApp::deviceOrientationChanged(int newOrientation){
+void ofApp::deviceOrientationChanged(int newOrientation){
 
 }
 
