@@ -4,8 +4,10 @@ ofxiPhoneSocial
 Social Framework Integration into openFrameworks on iOS
 
 ##Installation
-Add the Accounts and Social Framework to your project in Xcode.
-Then just copy the ofxiPhoneSocial.h and ofxiPhoneSocial.mm files into your project.
+
+1. Use project generator or copy `ofxiPhoneSocial.h` and `ofxiPhoneSocial.mm` into your project.
+1. Add `Social.framework` to Linked Frameworks and Libraries in your Xcode project.
+1. Add `NSPhotoLibraryUsageDescription` to the plist file.
 
 ##Usage
 
